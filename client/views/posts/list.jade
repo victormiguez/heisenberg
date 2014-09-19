@@ -1,0 +1,24 @@
+h2 Posts
+
+div(ng-controller='PostsCtrl')
+  
+  .msg.success(ng-show="action && registry")
+    p O post {{registry}} foi {{action}} com sucesso!
+
+  .row
+    a(href='/posts/add') Adicionar
+  
+  .row
+    table
+      thead
+        tr
+          th Título
+          th Descrição
+          th Operações
+      tbody
+        tr(ng-repeat="post in posts | orderBy: '-id' ")
+          td(data-th='Título') {{post.title}}
+          td(data-th='Descrição') {{post.description}}
+          td(data-th='Operações')
+            a(href='/posts/edit/{{post.id}}', title='{{post.title}}') Alterar
+            a(href='', ng-click='remove(post)', title='{{post.title}}') Excluir

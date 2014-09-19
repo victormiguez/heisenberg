@@ -1,0 +1,16 @@
+p Os campos marcados com * são de preenchimento obrigatório.
+
+form(name='form', ng-submit='submit(form.$valid)', novalidate)
+
+  .row
+    label(ng-class='{ "error" : (form.title.$invalid && !form.title.$pristine) || (submitted && form.title.$invalid) }') Título *
+    input(type='text', name='title', ng-model='post.title', required)
+    small(ng-show='(form.title.$invalid && !form.title.$pristine) || (submitted && form.title.$invalid)') Digite o título.
+
+  .row
+    label(ng-class='{ "error" : (form.description.$invalid && !form.description.$pristine) || (submitted && form.description.$invalid) }') Descrição *
+    textarea.bigger-el(name='description', ng-model='post.description', required)
+    small(ng-show='(form.description.$invalid && !form.description.$pristine) || (submitted && form.description.$invalid)') Digite a descrição.
+
+  .row
+    button(ng-disabled='isDisabled') Enviar

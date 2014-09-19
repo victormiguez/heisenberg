@@ -1,0 +1,51 @@
+.hb-topbar{
+  @extend %row;
+  @extend %border-box;
+  background: $secondary-color;
+  height: 60px;
+  padding: 10px 2% 0;
+}
+
+.hb-brand-name{
+  font-size: 24px;
+  margin: 0;
+  padding-top: 6px;
+  @include span(8/10);
+  a{
+    color: $gray;
+    text-decoration: none;
+  }
+}
+
+.hb-user-details{
+  padding-top: 5px;
+  position: relative;
+  text-align: right;
+  @include span(2/10);
+  a{
+    color: $gray;
+    text-decoration: none;
+  }
+}
+
+
+.hb-user-menu{
+  @extend %trs05;
+  background: $secondary-color;
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: -500%;
+  
+  &.active{
+    opacity: 1;
+    top: 45px;
+  }
+
+  li{
+    padding: 5px 20px;
+  }
+}

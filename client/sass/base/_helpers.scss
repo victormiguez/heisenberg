@@ -1,0 +1,32 @@
+%clearfix{
+  zoom: 1;
+  
+  &:after{
+    clear: both;
+    content: '';
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+%border-box{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+%row{
+  @extend %clearfix;
+  @extend %border-box;
+  width: 100%;
+}
+
+%trs03{
+  @include transition(.3s);
+}
+
+%trs05{
+  @include transition(.5s);
+}
