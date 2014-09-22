@@ -1,4 +1,4 @@
-# Heisenberg-
+# Heisenberg
 
 ![Logo](http://www.princiweb.com.br/heisenberg/logo.jpg)
 
@@ -25,9 +25,10 @@ E as seguintes depêndencias:
 
 - Gulp
 - Bower
+- CoffeeScript
 
 ```        
-npm install -g gulp bower
+npm install -g gulp bower coffee-script
 ```
 
 Depois vá a até a pasta do projeto e rode esse comando:

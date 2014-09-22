@@ -10,18 +10,17 @@ gulp.task('server', function () {
   nodemon({ script: './server/start-server.coffee', ext: 'coffee'})
 });
 
-gulp.task('img', function() {
-  gulp.src('./client/img/**/*')
-    .pipe(changed('./_public/img'))
-    .pipe(gulp.dest('./_public/img'));
-});
-
-
 gulp.task('template', function(){
   gulp.src('./client/views/**/*.jade')
     .pipe(jade())
     .pipe(changed('./_public/views'))
     .pipe(gulp.dest('./_public/views'));
+});
+
+gulp.task('img', function(){
+  gulp.src('./client/img/*')
+    .pipe(changed('./_public/img'))
+    .pipe(gulp.dest('./_public/img'));
 });
 
 gulp.task('vendor', function() {
@@ -57,5 +56,4 @@ gulp.task('default', ['server', 'img', 'template', 'coffee', 'vendor', 'b-s'], f
   gulp.watch('./client/views/**/*.jade', ['template']);
   gulp.watch('./client/scripts/**/*.coffee', ['coffee']);
   gulp.watch('./server/**/*.coffee', ['coffee']);
-  gulp.watch('./client/img/**/*', ['img']);
 });
