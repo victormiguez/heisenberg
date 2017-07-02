@@ -41,7 +41,7 @@ Agora é só rodar `gulp` e pronto, o projeto estará rodando :)
 
 ## Testes
 
-Para rodar os testes, você precisará do [Mocha](http://visionmedia.github.io/mocha/):
+Para rodar os testes, você precisará do [Mocha](http://mochajs.org/):
 
 ```
 npm install -g mocha
